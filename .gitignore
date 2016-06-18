@@ -13,4 +13,4 @@ tmp
 .bundle
 .idea/
 /.bundle
-/vendor/bundle
+/**/vendor
