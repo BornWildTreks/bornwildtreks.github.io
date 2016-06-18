@@ -8,8 +8,7 @@
 
 # Nanoc
 tmp
-/output
-/gh-pages
+/build
 *.log
 .bundle
 .idea/
