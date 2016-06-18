@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
-compile '/**/*.html' do
-  layout '/default.*'
+
+compile '/**/index.html' do
+  layout '/home_page.*'
 end
 
 compile '/assets/**/*.{js,css}' do
