@@ -8,21 +8,9 @@
 
 <body>
     <div id="page-container">
-        <div id="header">
-            <div id="nav-menu">
-            </div>
-
-            <div id="logo">
-            </div>
-        </div>
-
+        <%= render '/header.*' %>
         <div id="content-panel">
-            <div id="about-us">
-
-            </div>
-            <div id="activities">
-
-            </div>
+            <%= yield %>
         </div>
     </div>
 

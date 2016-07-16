@@ -1,24 +1,24 @@
 #!/usr/bin/env ruby
 
 
-compile '/**/index.html' do
-  layout '/home_page.*'
-end
-
 compile '/assets/**/*.{js,css}' do
   #remove assets from path
   write item.identifier.to_s.sub('/assets', '')
 end
 
-
-route '/**/*.{html,md}' do
-  if item.identifier =~ '/index.*'
-    '/index.html'
-  else
-    item.identifier.without_ext + '/index.html'
-  end
+compile '/**/*' do
+	if item.binary?
+	else
+		filter :erb
+		layout '/default.*'
+	end
 end
 
-
+route '/**/*.{html,md}' do
+  if item.binary?
+  else
+    item.identifier.to_s
+  end
+end
 
 layout '/**/*', :erb
